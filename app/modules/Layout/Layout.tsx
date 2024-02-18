@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router';
-import { ReactElement } from 'react'
+import { ReactNode } from 'react'
 import { GradientTitle, styles, Main, Container, Content } from './styles';
 import { ROUTES } from '~/constants';
 
@@ -8,10 +8,10 @@ type Props = {
   tagline?: string;
   primaryColor?: string;
   secondaryColor?: string;
-  children: ReactElement;
+  children: ReactNode;
 }
 
-export const Layout = ({ title, tagline, primaryColor, secondaryColor, children }: Props) => {
+export const Layout = ({ title, tagline, primaryColor = '', secondaryColor = '', children }: Props) => {
   const { pathname } = useLocation()
   const isHome = pathname === ROUTES.home
 

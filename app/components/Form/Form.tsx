@@ -9,7 +9,14 @@ import {
   Textarea,
   Button,
 } from './styles'
+import { json, useLoaderData } from '@remix-run/react';
+
+export const loader = async () => {
+  return json({ serviceId: process.env.SERVICE_ID, templateId: process.env.TEMPLATE_ID, publicKey: process.env.PUBLIC_KEY,  });
+};
+
 export const Form = () => {
+  const { serviceId, publicKey, templateId } = useLoaderData<typeof loader>();
   const { setToast } = useToast();
   const [text, setText] = useState('Send');
 
@@ -22,10 +29,10 @@ export const Form = () => {
       setText("Sending...");
 
       await sendForm(
-        `${process.env.SERVICE_ID}`,
-        `${process.env.TEMPLATE_ID}`,
+        `${serviceId}`,
+        `${templateId}`,
         e.target,
-        `${process.env.PUBLIC_KEY}`
+        `${publicKey}`
       );
 
       setToast(

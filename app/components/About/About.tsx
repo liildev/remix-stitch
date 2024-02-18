@@ -63,11 +63,11 @@ export const Bio = ({ description }: { description: string }) => {
           onMouseEnter={() => copyBioRef.current?.play()}
           onMouseLeave={() => copyBioRef.current?.stop()}
         >
-          <Lottie
+          {/* <Lottie
             mr
             lottieRef={copyBioRef}
             animationData={copyBioIcon}
-          />
+          /> */}
 
           Copy Bio
         </ButtonPrimary>
@@ -84,11 +84,11 @@ export const Bio = ({ description }: { description: string }) => {
           onMouseEnter={() => downloadRef.current?.play()}
           onMouseLeave={() => downloadRef.current?.stop()}
         >
-          <Lottie
+          {/* <Lottie
             mr
             lottieRef={downloadRef}
             animationData={downloadIcon}
-          />
+          /> */}
 
           Download Headshot
         </ButtonPrimary>
@@ -103,7 +103,7 @@ export const All = () => (items.map((item, idx) =>
     <h3>{item.jobTitle}</h3>
 
     <Description>
-      <Link href={item.companyUrl} target="_blank">
+      <Link to={item.companyUrl} target="_blank">
         {item.company}
       </Link>
 

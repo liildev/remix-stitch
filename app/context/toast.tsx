@@ -22,8 +22,9 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
   const [toastDescription, setToastDescription] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
 
-
   const setToast = (title: string, desc: string, showToast: boolean, isSuccess: boolean) => {
+    console.log(title);
+    
     setToastTitle(title)
     setToastDescription(desc)
     setShowToast(showToast)
