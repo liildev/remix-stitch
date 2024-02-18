@@ -15,7 +15,7 @@ import { getCssText } from '~/config';
 import * as gtag from "~/lib/gtag";
 import { Navbar, Footer, Toast } from './components';
 import { ToastProvider } from './context';
-import { CommandBar, Layout, Layout, ShortcutError } from './modules';
+import { CommandBar, Layout, ShortcutError } from './modules';
 import { Wrapper } from './ui';
 import * as ToastPrimitive from '@radix-ui/react-toast'
 import { PropsWithChildren, useEffect } from "react";
